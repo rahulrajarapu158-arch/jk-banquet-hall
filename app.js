@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navLinks.classList.toggle('active');
     });
 
@@ -54,6 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
     });
   }
 
@@ -607,6 +614,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { passive: false });
 
       window.addEventListener('resize', handleResize);
+      window.addEventListener('orientationchange', () => {
+        setTimeout(handleResize, 150);
+        setTimeout(handleResize, 350);
+      });
     }
 
     function handleResize() {
