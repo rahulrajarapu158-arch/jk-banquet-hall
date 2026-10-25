@@ -23,7 +23,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Global Verified Information for JK Banquet Hall Management
-  const VENUE_PHONE = "919849012345";
+  const VENUE_PHONE = "917093423051";
   const VENUE_ADDRESS = "JK Banquet Hall, Stadium Ground Road, Someshwarwada, Shivaji Nagar, Sangareddy, Telangana – 502001. Map: https://maps.google.com/?q=Stadium+Ground+Road+Shivaji+Nagar+Sangareddy+Telangana";
 
   /* ============================================================
